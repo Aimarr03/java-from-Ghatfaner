@@ -11,7 +11,8 @@ public class Peternak {
   Peternak() {
   }
 
-  Peternak(String[] szHewan, int[] intHasil, int[] intJumlah, int[] intTotalHarian, double[] dHasilBooster, double[] dHasilBoosterHarian) {
+  private Peternak(String[] szHewan, int[] intHasil, int[] intJumlah, int[] intTotalHarian, double[] dHasilBooster,
+      double[] dHasilBoosterHarian) {
     this.szHewan = szHewan;
     this.intHasil = intHasil;
     this.intJumlah = intJumlah;
@@ -36,27 +37,27 @@ public class Peternak {
     return dHasilBoosterHarian;
   }
 
-  public double[] getHasilBooster() {
+  private double[] getHasilBooster() {
     return dHasilBooster;
   }
 
-  public double[] getHasilBoosterHarian() {
+  private double[] getHasilBoosterHarian() {
     return dHasilBoosterHarian;
   }
 
-  public String[] getHewan() {
+  private String[] getHewan() {
     return szHewan;
   }
 
-  public int[] getHasil() {
+  private int[] getHasil() {
     return intHasil;
   }
 
-  public int[] getJumlah() {
+  private int[] getJumlah() {
     return intJumlah;
   }
 
-  public int[] getTotalHarian() {
+  private int[] getTotalHarian() {
     return intTotalHarian;
   }
 }
