@@ -1,7 +1,5 @@
 package Praktikum.Modul2;
 
-import java.util.Scanner;
-
 public class TestPeternak {
   public static void main(String[] args) {
     String[] szHewan = { "Bebek", "Domba", "Unta" };
@@ -13,54 +11,29 @@ public class TestPeternak {
 
     Peternak ternak = new Peternak(szHewan, intHasil, intJumlah, intTotalHarian, dHasilBooster, dHasilBoosterHarian);
 
-    System.out.printf("\nJenis\t\t\t: %s", ternak.getHewan()[0]);
-    System.out.printf("\nJumlah\t\t\t: %d ekor", ternak.getJumlah()[0]);
-    System.out.printf("\nTelur/Ekor\t\t: %d butir", ternak.getHasil()[0]);
-    System.out.printf("\nTelur/Ekor\t\t: %.0f butir (Setelah Booster)", ternak.getHasilBooster()[0]);
-    System.out.printf("\nTotal Telur/Hari\t: %d butir", ternak.getTotalHarian()[0]);
-    System.out.printf("\nTotal Telur/Hari\t: %.0f butir (Setelah Booster)", ternak.getHasilBoosterHarian()[0]);
-
-    System.out.printf("\n============================================================");
-
-    System.out.printf("\nJenis\t\t\t: %s", ternak.getHewan()[1]);
-    System.out.printf("\nJumlah\t\t\t: %d ekor", ternak.getJumlah()[1]);
-    System.out.printf("\nBulu/Ekor\t\t: %d kg", ternak.getHasil()[1]);
-    System.out.printf("\nBulu/Ekor\t\t: %.0f kg (Setelah Booster)", ternak.getHasilBooster()[1]);
-    System.out.printf("\nTotal Bulu/Hari\t\t: %d kg", ternak.getTotalHarian()[1]);
-    System.out.printf("\nTotal Bulu/Hari\t\t: %.0f kg (Setelah Booster)", ternak.getHasilBoosterHarian()[1]);
-
-    System.out.printf("\n============================================================");
-
-    System.out.printf("\nJenis\t\t\t: %s", ternak.getHewan()[2]);
-    System.out.printf("\nJumlah\t\t\t: %d ekor", ternak.getJumlah()[2]);
-    System.out.printf("\nSusu/Ekor\t\t: %d liter", ternak.getHasil()[2]);
-    System.out.printf("\nSusu/Ekor\t\t: %.0f liter (Setelah Booster)", ternak.getHasilBooster()[2]);
-    System.out.printf("\nTotal Susu/Hari\t\t: %d liter", ternak.getTotalHarian()[2]);
-    System.out.printf("\nTotal Susu/Hari\t\t: %.0f liter (Setelah Booster)", ternak.getHasilBoosterHarian()[2]);
-
-    System.out.printf("\n============================================================");
+    Peternak.getInfo();
   }
 }
 
 class Peternak {
-  private String[] szHewan;
-  private int[] intJumlah;
-  private int[] intHasil;
-  private int[] intTotalHarian;
-  private double[] dHasilBooster;
-  private double[] dHasilBoosterHarian;
+  private static String[] szHewan;
+  private static int[] intJumlah;
+  private static int[] intHasil;
+  private static int[] intTotalHarian;
+  private static double[] dHasilBooster;
+  private static double[] dHasilBoosterHarian;
 
   Peternak() {
   }
 
   Peternak(String[] szHewan, int[] intHasil, int[] intJumlah, int[] intTotalHarian, double[] dHasilBooster,
       double[] dHasilBoosterHarian) {
-    this.szHewan = szHewan;
-    this.intHasil = intHasil;
-    this.intJumlah = intJumlah;
-    this.intTotalHarian = intTotalHarian;
-    this.dHasilBooster = dHasilBooster;
-    this.dHasilBoosterHarian = dHasilBoosterHarian;
+    Peternak.szHewan = szHewan;
+    Peternak.intHasil = intHasil;
+    Peternak.intJumlah = intJumlah;
+    Peternak.intTotalHarian = intTotalHarian;
+    Peternak.dHasilBooster = dHasilBooster;
+    Peternak.dHasilBoosterHarian = dHasilBoosterHarian;
     this.setHasilBooster();
     this.setHasilBoosterHarian();
   }
@@ -79,27 +52,56 @@ class Peternak {
     return dHasilBoosterHarian;
   }
 
-  public double[] getHasilBooster() {
+  public static double[] getHasilBooster() {
     return dHasilBooster;
   }
 
-  public double[] getHasilBoosterHarian() {
+  public static double[] getHasilBoosterHarian() {
     return dHasilBoosterHarian;
   }
 
-  public String[] getHewan() {
+  public static String[] getHewan() {
     return szHewan;
   }
 
-  public int[] getHasil() {
+  public static int[] getHasil() {
     return intHasil;
   }
 
-  public int[] getJumlah() {
+  public static int[] getJumlah() {
     return intJumlah;
   }
 
-  public int[] getTotalHarian() {
+  public static int[] getTotalHarian() {
     return intTotalHarian;
+  }
+
+  public static void getInfo() {
+    for (int i = 0; i < szHewan.length; i++) {
+
+      if (szHewan[i] == ("Bebek")) {
+        String info = String.format(
+            "Jenis\t\t\t: %s\nJumlah\t\t\t: %d ekor\nTelur/Ekor\t\t: %d butir\nTelur/Ekor\t\t: %.0f butir (Setelah Booster)\nTotal Telur/Hari\t: %d butir\nTotal Telur/Hari\t: %.0f butir (Setelah Booster)",
+            Peternak.getHewan()[i], Peternak.getJumlah()[i], Peternak.getHasil()[i], Peternak.getHasilBooster()[i],
+            Peternak.getTotalHarian()[i], Peternak.getHasilBoosterHarian()[i]);
+        System.out.println(info);
+
+      } else if (szHewan[i] == ("Domba")) {
+        String info = String.format(
+            "Jenis\t\t\t: %s\nJumlah\t\t\t: %d ekor\nBulu/Ekor\t\t: %d kg\nBulu/Ekor\t\t: %.0f kg (Setelah Booster)\nTotal Bulu/Hari\t\t: %d kg\nTotal Bulu/Hari\t\t: %.0f kg (Setelah Booster)",
+            Peternak.getHewan()[i], Peternak.getJumlah()[i], Peternak.getHasil()[i], Peternak.getHasilBooster()[i],
+            Peternak.getTotalHarian()[i], Peternak.getHasilBoosterHarian()[i]);
+        System.out.println(info);
+      } else if (szHewan[i] == ("Unta")) {
+        String info = String.format(
+            "Jenis\t\t\t: %s\nJumlah\t\t\t: %d ekor\nSusu/Ekor\t\t: %d kg\nSusu/Ekor\t\t: %.0f kg (Setelah Booster)\nTotal Susu/Hari\t\t: %d kg\nTotal Susu/Hari\t\t: %.0f kg (Setelah Booster)",
+            Peternak.getHewan()[i], Peternak.getJumlah()[i], Peternak.getHasil()[i], Peternak.getHasilBooster()[i],
+            Peternak.getTotalHarian()[i], Peternak.getHasilBoosterHarian()[i]);
+        System.out.println(info);
+      } else
+        System.out.println("Maaf data anda belum dimasukkan");
+
+      System.out.println("=".repeat(60));
+    }
   }
 }

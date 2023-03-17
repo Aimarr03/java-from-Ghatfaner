@@ -1,14 +1,14 @@
 package Praktikum.Modul2;
 
 public class Peternak {
-  private String[] szHewan;
+  private static String[] szHewan;
   private int[] intJumlah;
-  private int[] intHasil;
+  private static int[] intHasil;
   private int[] intTotalHarian;
   private double[] dHasilBooster;
   private double[] dHasilBoosterHarian;
 
-  Peternak() {
+  public Peternak() {
   }
 
   private Peternak(String[] szHewan, int[] intHasil, int[] intJumlah, int[] intTotalHarian, double[] dHasilBooster,
@@ -45,11 +45,11 @@ public class Peternak {
     return dHasilBoosterHarian;
   }
 
-  private String[] getHewan() {
+  private static String[] getHewan() {
     return szHewan;
   }
 
-  private int[] getHasil() {
+  private static int[] getHasil() {
     return intHasil;
   }
 
@@ -59,5 +59,16 @@ public class Peternak {
 
   private int[] getTotalHarian() {
     return intTotalHarian;
+  }
+
+  private void getInfo() {
+    for (int i = 0; i < szHewan.length; i++) {
+      System.out.println("=".repeat(40));
+
+      String info = String.format(
+          "\nJenis\t\t\t: %s\nJumlah\t\t\t: %d ekor\nTelur/Ekor\t\t: %d butir\nTelur/Ekor\t\t: %.0f butir (Setelah Booster)\nTotal Telur/Hari\t: %d butir\nTotal Telur/Hari\t: %.0f butir (Setelah Booster)", getHewan()[i], getJumlah()[i], getHasil()[i], getHasilBooster()[i], getTotalHarian()[i], getHasilBoosterHarian()[i]);
+      
+      System.out.println("=".repeat(40));
+    }
   }
 }
