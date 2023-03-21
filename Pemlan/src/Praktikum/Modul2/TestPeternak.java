@@ -12,7 +12,7 @@ public class TestPeternak {
     Peternak ternak = new Peternak(szHewan, intHasil, intJumlah, intTotalHarian, dHasilBooster, dHasilBoosterHarian);
 
     Peternak.getInfo();
-  }
+  } 
 }
 
 class Peternak {
